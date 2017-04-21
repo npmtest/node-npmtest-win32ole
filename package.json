@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-win32ole",     "homepage": "https://github.com/npmtest/node-npmtest-win32ole",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-win32ole.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [win32ole (v0.1.3)](https://github.com/idobatter/node-win32ole)  [![npm package](https://img.shields.io/npm/v/npmtest-win32ole.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-win32ole) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-win32ole.svg)](https://travis-ci.org/npmtest/node-npmtest-win32ole)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-win32ole",
+    "keywords": [
+        "coverage",
+        "test",
+        "win32ole"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_win32ole.js",
+    "name": "npmtest-win32ole",
+    "nameAlias": "npmtest_win32ole",
+    "nameOriginal": "npmtest-win32ole",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-win32ole.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
